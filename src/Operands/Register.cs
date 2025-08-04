@@ -5,7 +5,7 @@ public class Register : Operand
 {
     public int index { get; private set; }
 
-    public Register(string name) : base(name)
+    public Register(string name) : base(name, "Register", 3)
     {
         type = "Register";
         length = 3;

@@ -1,0 +1,8 @@
+Register: r0-r7
+Immediate: #value
+Address: [value]
+Label: name:
+Character literal: 'c'
+String literal: "String"
+Hex,Bin: 0x,0b
+Comment: ; comment

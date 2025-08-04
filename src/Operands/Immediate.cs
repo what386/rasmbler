@@ -5,11 +5,9 @@ public class Immediate : Operand
 {
     public int value { get; private set; }
 
-    public Immediate(string name, int length) : base(name)
+    public Immediate(string name, int length) :base(name, "Immediate", length) 
     {
-        type = "Immdiate";
-        this.length = length;
-        value = BaseConverter.ToDecimal(name);
+        value = BaseConverter.ToDecimal(name.Split('#')[1]);
     }
 
     public override string Parse()
