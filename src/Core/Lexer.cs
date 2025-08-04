@@ -1,7 +1,6 @@
 namespace Assembler.Core;
 
 using Assembler.Operands;
-using Assembler.Formats;
 using Assembler.Exceptions;
 
 public static class Lexer

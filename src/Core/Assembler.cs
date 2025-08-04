@@ -6,6 +6,25 @@ using Assembler.Exceptions;
 
 public class Assembler
 {
+
+    public void ParseInstruction(string instruction)
+    {
+        string binary;
+
+        var mnemonic, operandList = ParseLine(instruction);
+        var instructionFormat, typeBits = GetInstructionInformation(mnemonic);
+
+        binary = instructionFormat.opcode;
+
+        for (int i = 0; i < operandList.Count; i++)
+        {
+            Operand operand = operandList[i]
+
+            if(operand.type != instructionFormat.operandTypes[i])
+            binary += operand.Parse();
+        }
+    }
+
     public (string, List<Operand>) ParseLine(string line)
     {
         List<Operand> operandList = new List<Operand>();
@@ -30,7 +49,7 @@ public class Assembler
 
         if (Formats.InstructionFormats.TryGetValue(baseMnemonic, out InstructionFormat format))
         {
-            string typeBits = Formats.InstTypes[mnemonic];
+            string typeBits = Formats.InstTypes.GetValueOrDefault(mnemonic, "");
             return (format, typeBits);
         }
 
